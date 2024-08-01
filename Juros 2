@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double inicial = 3800.00;
+        double i = 1.25 / 100;
+        double final;
+
+        System.Console.WriteLine("Informe o periodo: ");
+        int mes = int.Parse(Console.ReadLine());
+
+        final = inicial * Math.Pow(1 + i, mes);
+
+        System.Console.WriteLine($"O valor futuro será: {final:C2}");
+        double valor = inicial;
+
+        for (int cont = 1; cont <= mes; cont++)
+        {
+            double r = valor * i;
+            valor += r;
+            double liquido = valor - inicial;
+
+            System.Console.WriteLine($"\n Mês {cont}, rendiemnto liquido: {liquido:C2}");
+            System.Console.WriteLine($" Rendimento: {valor:C2}");
+
+        }
+
+    }
+}

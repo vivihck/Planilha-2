@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double p = 1000.00;
+        double i = 5.30 / 100;
+        double f;
+
+        System.Console.WriteLine("Informe o periodo: ");
+        int n = int.Parse(Console.ReadLine());
+
+        f = p * Math.Pow(1 + i, n);
+
+        System.Console.WriteLine($"O valor futuro será: {f:C2}");
+
+    }
+}

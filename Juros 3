@@ -1,0 +1,29 @@
+class Program
+{
+    static void Main()
+    {
+        double r;
+        double f;
+
+        System.Console.WriteLine("Informe o valor presente: ");
+        double p = double.Parse(Console.ReadLine());
+
+        System.Console.WriteLine("Informe a taxa de juros: ");
+        double i = double.Parse(Console.ReadLine());
+
+        System.Console.WriteLine("Informe o periodo:  ");
+        int n = int.Parse(Console.ReadLine());
+
+        f = p * Math.Pow(1 + i / 100, n);
+        r = f - p;
+
+        System.Console.WriteLine($"\n Valor de presente R$:{p:C2}");
+        System.Console.WriteLine($" Taxa de Juros:{i}%");
+        System.Console.WriteLine($" Período mensal:{n}");
+        System.Console.WriteLine($" Rendimento  R$:{r:C2}");
+        System.Console.WriteLine($" Valor final de juros R$:{f:C2}");
+
+
+    }
+}
+

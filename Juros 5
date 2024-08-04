@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        double TaxaJuros = 0.0125;
+
+        System.Console.WriteLine("Passe o valor inicial: ");
+        double valorPresente = Convert.ToDouble(Console.ReadLine());
+
+   System.Console.WriteLine("Qual o valor Futuro: ");
+        double ValorFuturo = Convert.ToDouble(Console.ReadLine());
+
+        double Valorrequerido = (ValorFuturo - valorPresente);
+
+        double x = Math.Log(ValorFuturo / valorPresente) / Math.Log(1 + TaxaJuros);
+        int Anos = (int)Math.Ceiling(x);
+
+        System.Console.WriteLine($"\nValor presente inicial: R$ {valorPresente:C2}");
+        System.Console.WriteLine($"Juros mensal: {TaxaJuros * 100}%");
+        System.Console.WriteLine($"Valor futuro desejado: R$ {ValorFuturo:C2}");
+        System.Console.WriteLine($"Período de tempo necessarios em anos: {Anos/12}");
+        System.Console.WriteLine($"Valor necessário para atingir o valor futuro desejado: R$ {Valorrequerido:C2}");
+    }
+}

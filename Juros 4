@@ -1,0 +1,48 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        Console.Write("Digite o valor inicial do investimento R$: ");
+        double saldoInicial = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite a taxa de juros: ");
+        double taxaRendimento = double.Parse(Console.ReadLine()) / 100;
+
+        Console.Write("Digite o número de meses para o investimento: ");
+        int numeroMeses = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o número de dias adicionais após o último mês: ");
+        int diasAdicionais = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o valor do saque no 5º mês (R$): ");
+        double saqueMes5 = double.Parse(Console.ReadLine());
+
+        double saldoAtual = saldoInicial;
+
+
+        for (int mes = 1; mes <= numeroMeses; mes++)
+        {
+            double rendimento = saldoAtual * taxaRendimento;
+            double saldoFinal = saldoAtual + rendimento;
+
+       
+            if (mes == 5)
+            {
+                saldoFinal -= saqueMes5;
+            }
+
+            saldoAtual = saldoFinal;
+        }
+
+        double rendimentoDiario = saldoAtual * taxaRendimento / 30; 
+        double rendimentoAdicional = rendimentoDiario * diasAdicionais;
+        double saldoFuturo = saldoAtual + rendimentoAdicional;
+
+        Console.WriteLine($"\nSaldo inicial: {saldoInicial:C}");
+        Console.WriteLine($"Saldo após 5 meses (com saque de {saqueMes5:C}): {saldoAtual:C}");
+        Console.WriteLine($"Saldo futuro ao final do período de {numeroMeses} meses e {diasAdicionais} dias: {saldoFuturo:C}");
+    }
+}

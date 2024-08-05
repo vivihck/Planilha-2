@@ -35,7 +35,6 @@ class Program
         double rendimentoAdicional = rendimentoDiario;
         double saldoFuturo = saldoAtual + rendimentoAdicional;
 
-        // Exibindo a tabela de resultados
         Console.WriteLine("\nTabela de Cálculo:");
         Console.WriteLine(new string('-', 60));
         Console.WriteLine("| {0,-35} | {1,20} |", "Descrição", "Valor");
